@@ -9,9 +9,9 @@
 ; Tell the assembler that we're on 32 bit mode
 [bits 32]
 ; Create a new function from the Kernel/Kernel.cpp file
-[extern Kmain]
+[extern KMain]
 ; Call the function in the Kernel/Kernel.cpp file.
 ; The linker will place this in the memory
-call Kmain
+call KMain
 ; Create infinite loop
 jmp $

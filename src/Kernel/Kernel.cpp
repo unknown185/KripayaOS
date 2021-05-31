@@ -5,9 +5,10 @@
 //  Created by Ashwin Paudel on 2021-05-31.
 //
 
-// We are going to print 'Hello world'
-extern "C" void Kmain() {
-    unsigned char* VideoMemory = (unsigned char*) 0xb8000;
+// We are going to print 'Hello world' to our operating system
+extern "C" void KMain()
+{
+    unsigned char *VideoMemory = (unsigned char *)0xb8000;
     VideoMemory[0] = 'H';
     VideoMemory[2] = 'E';
     VideoMemory[4] = 'L';

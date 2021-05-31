@@ -31,9 +31,9 @@ call Switch32Bit
 jmp $
 
 ; Include other files
-%include "Boot/Disk.asm"
-%include "Boot/GDT.asm"
-%include "Boot/Switch32bit.asm"
+%include "src/Boot/Disk.asm"
+%include "src/Boot/GDT.asm"
+%include "src/Boot/Switch32bit.asm"
 
 ; We're using 16 bit instructions, so we have to tell assembler.
 [bits 16]
