@@ -17,8 +17,13 @@ void setCursor(int offset);
 int getCursor();
 // Print a character in the screen
 void setCharacterAtVideoMemory(char character, int offset);
+int getRowFromOffset(int offset);
+int getOffset(int col, int row);
+int moveOffsetToNewLine(int offset);
+void memoryCopy(char *source, char *dest, int nbytes);
+int scroll_ln(int offset);
+void clearScreen();
 // Print a string into the screen
 void print(char *string);
-
 
 #endif // __DISPLAY_H__
