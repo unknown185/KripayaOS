@@ -30,16 +30,19 @@ int getCursor()
     return offset * 2;
 }
 
-void setCharacterAtVideoMemory(char character, int offset) {
-    uint8_t *vidmem = (uint8_t *) VIDEO_ADDRESS;
+void setCharacterAtVideoMemory(char character, int offset)
+{
+    uint8_t *vidmem = (uint8_t *)VIDEO_ADDRESS;
     vidmem[offset] = character;
     vidmem[offset + 1] = WHITE_ON_BLACK;
 }
 
-void print(char *string) {
+void print(char *string)
+{
     int offset = getCursor();
     int i = 0;
-    while (string[i] != 0) {
+    while (string[i] != 0)
+    {
         setCharacterAtVideoMemory(string[i], offset);
         i++;
         offset += 2;
