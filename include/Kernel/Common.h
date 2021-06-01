@@ -5,7 +5,6 @@
 //  Created by Ashwin Paudel on 2021-05-31.
 //
 
-
 #ifndef __COMMON_H__
 #define __COMMON_H__
 
@@ -29,6 +28,5 @@ typedef uint32_t size_t;
 #define MAX_ROWS 25
 #define MAX_COLS 80
 #define WHITE_ON_BLACK 0x0f
-
 
 #endif // __COMMON_H__
