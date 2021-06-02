@@ -10,8 +10,8 @@
 # $^ = all dependencies
 
 # detect all .o files based on their .c source
-C_SOURCES = $(wildcard src/Kernel/*.cpp src/Drivers/*.cpp)
-HEADERS = $(wildcard include/Kernel/*.h  include/Drivers/*.h)
+C_SOURCES = $(wildcard src/Kernel/*.cpp src/Drivers/*.cpp src/Firmware/*.cpp)
+HEADERS = $(wildcard include/Kernel/*.h  include/Drivers/*.h include/Firmware/*.h)
 OBJ_FILES = ${C_SOURCES:.cpp=.o}
 
 # First rule is the one executed when no parameters are fed to the Makefile
@@ -55,3 +55,4 @@ clean:
 	$(RM) src/Kernel/*.o
 	$(RM) src/Boot/*.o src/Boot/*.bin
 	$(RM) src/Drivers/*.o
+	$(RM) src/Firmware/*.o

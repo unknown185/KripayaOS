@@ -25,5 +25,6 @@ int scroll_ln(int offset);
 void clearScreen();
 // Print a string into the screen
 void print(char *string);
+void newLine();
 
 #endif // __DISPLAY_H__

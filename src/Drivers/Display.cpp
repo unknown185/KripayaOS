@@ -107,3 +107,10 @@ void print(char *string)
     }
     setCursor(offset);
 }
+void newLine() {
+     int newOffset = moveOffsetToNewLine(getCursor());
+    if (newOffset >= MAX_ROWS * MAX_COLS * 2) {
+        newOffset = scroll_ln(newOffset);
+    }
+    setCursor(newOffset);
+}
