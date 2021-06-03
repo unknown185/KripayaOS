@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
+  steps:
     - uses: actions/checkout@v1
     - name: Configure
       run: brew install nasm i386-elf-binutils i386-elf-gcc i386-elf-gdb
