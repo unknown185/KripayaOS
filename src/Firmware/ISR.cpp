@@ -7,44 +7,44 @@
 
 #include <Firmware/ISR.h>
 
-isr_t interrupt_handlers[256];
+isr_t InterruptHandlers[256];
 
 /* Can't do this with a loop because we need the address
  * of the function names */
-extern "C" void isr_install()
+extern "C" void ISRInstall()
 {
-    set_idt_gate(0, (uint32_t)isr0);
-    set_idt_gate(1, (uint32_t)isr1);
-    set_idt_gate(2, (uint32_t)isr2);
-    set_idt_gate(3, (uint32_t)isr3);
-    set_idt_gate(4, (uint32_t)isr4);
-    set_idt_gate(5, (uint32_t)isr5);
-    set_idt_gate(6, (uint32_t)isr6);
-    set_idt_gate(7, (uint32_t)isr7);
-    set_idt_gate(8, (uint32_t)isr8);
-    set_idt_gate(9, (uint32_t)isr9);
-    set_idt_gate(10, (uint32_t)isr10);
-    set_idt_gate(11, (uint32_t)isr11);
-    set_idt_gate(12, (uint32_t)isr12);
-    set_idt_gate(13, (uint32_t)isr13);
-    set_idt_gate(14, (uint32_t)isr14);
-    set_idt_gate(15, (uint32_t)isr15);
-    set_idt_gate(16, (uint32_t)isr16);
-    set_idt_gate(17, (uint32_t)isr17);
-    set_idt_gate(18, (uint32_t)isr18);
-    set_idt_gate(19, (uint32_t)isr19);
-    set_idt_gate(20, (uint32_t)isr20);
-    set_idt_gate(21, (uint32_t)isr21);
-    set_idt_gate(22, (uint32_t)isr22);
-    set_idt_gate(23, (uint32_t)isr23);
-    set_idt_gate(24, (uint32_t)isr24);
-    set_idt_gate(25, (uint32_t)isr25);
-    set_idt_gate(26, (uint32_t)isr26);
-    set_idt_gate(27, (uint32_t)isr27);
-    set_idt_gate(28, (uint32_t)isr28);
-    set_idt_gate(29, (uint32_t)isr29);
-    set_idt_gate(30, (uint32_t)isr30);
-    set_idt_gate(31, (uint32_t)isr31);
+    SetIDTGate(0, (uint32_t)isr0);
+    SetIDTGate(1, (uint32_t)isr1);
+    SetIDTGate(2, (uint32_t)isr2);
+    SetIDTGate(3, (uint32_t)isr3);
+    SetIDTGate(4, (uint32_t)isr4);
+    SetIDTGate(5, (uint32_t)isr5);
+    SetIDTGate(6, (uint32_t)isr6);
+    SetIDTGate(7, (uint32_t)isr7);
+    SetIDTGate(8, (uint32_t)isr8);
+    SetIDTGate(9, (uint32_t)isr9);
+    SetIDTGate(10, (uint32_t)isr10);
+    SetIDTGate(11, (uint32_t)isr11);
+    SetIDTGate(12, (uint32_t)isr12);
+    SetIDTGate(13, (uint32_t)isr13);
+    SetIDTGate(14, (uint32_t)isr14);
+    SetIDTGate(15, (uint32_t)isr15);
+    SetIDTGate(16, (uint32_t)isr16);
+    SetIDTGate(17, (uint32_t)isr17);
+    SetIDTGate(18, (uint32_t)isr18);
+    SetIDTGate(19, (uint32_t)isr19);
+    SetIDTGate(20, (uint32_t)isr20);
+    SetIDTGate(21, (uint32_t)isr21);
+    SetIDTGate(22, (uint32_t)isr22);
+    SetIDTGate(23, (uint32_t)isr23);
+    SetIDTGate(24, (uint32_t)isr24);
+    SetIDTGate(25, (uint32_t)isr25);
+    SetIDTGate(26, (uint32_t)isr26);
+    SetIDTGate(27, (uint32_t)isr27);
+    SetIDTGate(28, (uint32_t)isr28);
+    SetIDTGate(29, (uint32_t)isr29);
+    SetIDTGate(30, (uint32_t)isr30);
+    SetIDTGate(31, (uint32_t)isr31);
 
     /// Remap the PIC
     // ICW1
@@ -64,28 +64,28 @@ extern "C" void isr_install()
     Port(0xA1).write(0x0);
 
     // Install the IRQs
-    set_idt_gate(32, (uint32_t)irq0);
-    set_idt_gate(33, (uint32_t)irq1);
-    set_idt_gate(34, (uint32_t)irq2);
-    set_idt_gate(35, (uint32_t)irq3);
-    set_idt_gate(36, (uint32_t)irq4);
-    set_idt_gate(37, (uint32_t)irq5);
-    set_idt_gate(38, (uint32_t)irq6);
-    set_idt_gate(39, (uint32_t)irq7);
-    set_idt_gate(40, (uint32_t)irq8);
-    set_idt_gate(41, (uint32_t)irq9);
-    set_idt_gate(42, (uint32_t)irq10);
-    set_idt_gate(43, (uint32_t)irq11);
-    set_idt_gate(44, (uint32_t)irq12);
-    set_idt_gate(45, (uint32_t)irq13);
-    set_idt_gate(46, (uint32_t)irq14);
-    set_idt_gate(47, (uint32_t)irq15);
+    SetIDTGate(32, (uint32_t)irq0);
+    SetIDTGate(33, (uint32_t)irq1);
+    SetIDTGate(34, (uint32_t)irq2);
+    SetIDTGate(35, (uint32_t)irq3);
+    SetIDTGate(36, (uint32_t)irq4);
+    SetIDTGate(37, (uint32_t)irq5);
+    SetIDTGate(38, (uint32_t)irq6);
+    SetIDTGate(39, (uint32_t)irq7);
+    SetIDTGate(40, (uint32_t)irq8);
+    SetIDTGate(41, (uint32_t)irq9);
+    SetIDTGate(42, (uint32_t)irq10);
+    SetIDTGate(43, (uint32_t)irq11);
+    SetIDTGate(44, (uint32_t)irq12);
+    SetIDTGate(45, (uint32_t)irq13);
+    SetIDTGate(46, (uint32_t)irq14);
+    SetIDTGate(47, (uint32_t)irq15);
 
-    load_idt(); // Load with ASM
+    LoadIDT(); // Load with ASM
 }
 
 /* To print the message which defines every exception */
-char *exception_messages[] = {
+char *ExceptionMessages[] = {
     "Division By Zero",
     "Debug",
     "Non Maskable Interrupt",
@@ -122,28 +122,28 @@ char *exception_messages[] = {
     "Reserved",
     "Reserved"};
 
-extern "C" void isr_handler(registers_t *r)
+extern "C" void ISRHandler(registers_t *r)
 {
     print("received interrupt: ");
     char s[3];
-    int_to_string(r->int_no, s);
+    IntToChar(r->int_no, s);
     print(s);
     newLine();
-    print(exception_messages[r->int_no]);
+    print(ExceptionMessages[r->int_no]);
     newLine();
 }
 
-void register_interrupt_handler(uint8_t n, isr_t handler)
+void RegisterInterruptHandler(uint8_t n, isr_t handler)
 {
-    interrupt_handlers[n] = handler;
+    InterruptHandlers[n] = handler;
 }
 
-extern "C" void irq_handler(registers_t *r)
+extern "C" void IRQHandler(registers_t *r)
 {
     /* Handle the interrupt in a more modular way */
-    if (interrupt_handlers[r->int_no] != 0)
+    if (InterruptHandlers[r->int_no] != 0)
     {
-        isr_t handler = interrupt_handlers[r->int_no];
+        isr_t handler = InterruptHandlers[r->int_no];
         handler(r);
     }
 

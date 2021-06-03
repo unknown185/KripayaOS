@@ -27,6 +27,6 @@ typedef struct {
 
 #define IDT_ENTRIES 256
 
-extern "C" void set_idt_gate(int n, uint32_t handler);
+extern "C" void SetIDTGate(int n, uint32_t handler);
 
-extern "C" void load_idt();
+extern "C" void LoadIDT();

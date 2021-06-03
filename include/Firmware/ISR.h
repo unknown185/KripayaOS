@@ -141,10 +141,10 @@ typedef struct {
     uint32_t eip, cs, eflags, useresp, ss; /* Pushed by the processor automatically */
 } registers_t;
 
-extern "C" void isr_install();
+extern "C" void ISRInstall();
 
-extern "C" void isr_handler(registers_t *r);
+extern "C" void ISRHandler(registers_t *r);
 
 typedef void (*isr_t)(registers_t *);
 
-void register_interrupt_handler(uint8_t n, isr_t handler);
+void RegisterInterruptHandler(uint8_t n, isr_t handler);

@@ -6,19 +6,19 @@
 
 uint32_t tick = 0;
 
-static void timer_callback(registers_t *regs) {
+static void TimerCallback(registers_t *regs) {
     tick++;
     print("Tick: ");
 
     char tick_ascii[256];
-    int_to_string(tick, tick_ascii);
+    IntToChar(tick, tick_ascii);
     print(tick_ascii);
     newLine();
 }
 
-void init_timer(uint32_t freq) {
+void InitTimer(uint32_t freq) {
     /* Install the function we just wrote */
-    register_interrupt_handler(IRQ0, timer_callback);
+    RegisterInterruptHandler(IRQ0, TimerCallback);
 
     /* Get the PIT value: hardware clock at 1193180 Hz */
     uint32_t divisor = 1193180 / freq;

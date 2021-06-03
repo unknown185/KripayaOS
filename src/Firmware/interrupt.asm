@@ -1,6 +1,6 @@
 ; Defined in isr.c
-[extern isr_handler]
-[extern irq_handler]
+[extern ISRHandler]
+[extern IRQHandler]
 
 ; Common ISR code
 isr_common_stub:
@@ -16,7 +16,7 @@ isr_common_stub:
 
     ; 2. Call C handler
     push esp ; push registers_t *r pointer
-	call isr_handler
+	call ISRHandler
 	pop eax ; clear pointer afterwards
 
     ; 3. Restore state
@@ -44,7 +44,7 @@ irq_common_stub:
 
     ; 2. Call C handler
     push esp
-    call irq_handler ; Different than the ISR code
+    call IRQHandler ; Different than the ISR code
     pop ebx  ; Different than the ISR code
 
     ; 3. Restore state

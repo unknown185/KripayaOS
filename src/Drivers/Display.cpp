@@ -114,3 +114,8 @@ void newLine() {
     }
     setCursor(newOffset);
 }
+void backspace() {
+    int newCursor = getCursor() - 2;
+    setCharacterAtVideoMemory(' ', newCursor);
+    setCursor(newCursor);
+}

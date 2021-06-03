@@ -41,7 +41,7 @@ jmp $
 ; This will load the kernel into the memory
 LoadKernel:
     mov bx, KernelOffset
-    mov dh, 2
+    mov dh, 31
     mov dl, [BootDrive]
     call DiskLoad
     ret

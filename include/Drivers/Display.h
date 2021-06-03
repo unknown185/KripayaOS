@@ -26,5 +26,5 @@ void clearScreen();
 // Print a string into the screen
 void print(char *string);
 void newLine();
-
+void backspace();
 #endif // __DISPLAY_H__
