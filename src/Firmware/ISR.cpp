@@ -46,15 +46,20 @@ extern "C" void isr_install()
     set_idt_gate(30, (uint32_t)isr30);
     set_idt_gate(31, (uint32_t)isr31);
 
-    // Remap the PIC
+    /// Remap the PIC
+    // ICW1
     Port(0x20).write(0x11);
     Port(0xA0).write(0x11);
+    // ICW2
     Port(0x21).write(0x20);
     Port(0xA1).write(0x28);
+    // ICW3
     Port(0x21).write(0x04);
     Port(0xA1).write(0x02);
+    // ICW4
     Port(0x21).write(0x01);
     Port(0xA1).write(0x01);
+    // OCW1
     Port(0x21).write(0x0);
     Port(0xA1).write(0x0);
 

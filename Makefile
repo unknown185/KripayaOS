@@ -12,7 +12,7 @@
 # detect all .o files based on their .c source
 C_SOURCES = $(wildcard src/Kernel/*.cpp src/Drivers/*.cpp src/Firmware/*.cpp)
 HEADERS = $(wildcard include/Kernel/*.h  include/Drivers/*.h include/Firmware/*.h)
-OBJ_FILES = ${C_SOURCES:.cpp=.o}
+OBJ_FILES = ${C_SOURCES:.cpp=.o} src/Firmware/interrupt.o
 
 # First rule is the one executed when no parameters are fed to the Makefile
 all: run
