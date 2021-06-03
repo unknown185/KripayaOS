@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: build CI
 
 on:
   push:
@@ -7,10 +7,13 @@ on:
     branches: [ main ]
 
 jobs:
-  steps:
-    - uses: actions/checkout@v1
-    - name: Configure
-      run: brew install nasm i386-elf-binutils i386-elf-gcc i386-elf-gdb
-    - name: Build the OS
-      run: make KripayaOS.bin
+  build:
 
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: install build dependencies
+      run: brew install nasm i386-elf-binutils i386-elf-gcc i386-elf-gdb # install dependencies
+    - name: make
+      run: make
