@@ -13,5 +13,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Configure
+    - run: brew install nasm
     - name: make KripayaOS.bin
       run: make KripayaOS.bin
