@@ -107,14 +107,17 @@ void print(char *string)
     }
     setCursor(offset);
 }
-void newLine() {
-     int newOffset = moveOffsetToNewLine(getCursor());
-    if (newOffset >= MAX_ROWS * MAX_COLS * 2) {
+void newLine()
+{
+    int newOffset = moveOffsetToNewLine(getCursor());
+    if (newOffset >= MAX_ROWS * MAX_COLS * 2)
+    {
         newOffset = scroll_ln(newOffset);
     }
     setCursor(newOffset);
 }
-void backspace() {
+void backspace()
+{
     int newCursor = getCursor() - 2;
     setCharacterAtVideoMemory(' ', newCursor);
     setCursor(newCursor);

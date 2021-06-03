@@ -29,7 +29,6 @@ typedef uint32_t size_t;
 #define MAX_COLS 80
 #define WHITE_ON_BLACK 0x0f
 
-
 void memory_copy(uint8_t *source, uint8_t *dest, uint32_t nbytes);
 
 int string_length(char s[]);

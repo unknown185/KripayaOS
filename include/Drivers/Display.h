@@ -5,7 +5,6 @@
 //  Created by Ashwin Paudel on 2021-06-1.
 //
 
-
 #ifndef __DISPLAY_H__
 #define __DISPLAY_H__
 
