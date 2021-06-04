@@ -34,11 +34,13 @@ jmp $
 %include "src/Boot/Disk.asm"
 %include "src/Boot/GDT.asm"
 %include "src/Boot/Switch32bit.asm"
-
+%include "src/Boot/Print16Bit.asm"
+%include "src/Boot/Print32Bit.asm"
 ; We're using 16 bit instructions, so we have to tell assembler.
 [bits 16]
 ; Create a new function
 ; This will load the kernel into the memory
+; call print32_nl
 LoadKernel:
     mov bx, KernelOffset
     mov dh, 31

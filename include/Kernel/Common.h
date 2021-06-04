@@ -19,6 +19,9 @@ typedef unsigned long long int uint64_t;
 typedef const char *string;
 typedef uint32_t size_t;
 
+#define NULL_POINTER ( (void *) 0)
+
+
 #define VGA_CTRL_REGISTER 0x3d4
 #define VGA_DATA_REGISTER 0x3d5
 #define VGA_OFFSET_LOW 0x0f
@@ -27,7 +30,7 @@ typedef uint32_t size_t;
 #define VIDEO_ADDRESS 0xb8000
 #define MAX_ROWS 25
 #define MAX_COLS 80
-#define WHITE_ON_BLACK 0x0f
+// #define WHITE_ON_BLACK 0x0f
 
 void memory_copy(uint8_t *source, uint8_t *dest, uint32_t nbytes);
 

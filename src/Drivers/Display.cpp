@@ -7,6 +7,8 @@
 
 #include <Drivers/Display.h>
 #include <Drivers/Port.h>
+#include <Drivers/Colors.h>
+
 
 void setCursor(int offset)
 {
