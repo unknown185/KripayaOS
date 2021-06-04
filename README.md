@@ -5,7 +5,7 @@ Kripaya Operating System
   - Own Bootloader
   - Global Descriptor Table
   - Interrupts
-  - Keyboard
+  - Keyboard 
   - Mini Shell
 
 ## Building
